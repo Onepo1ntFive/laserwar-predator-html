@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 ::selection {
-    background: $color-green;
+    background: $color-red;
     color: $color-white;
 }
 ::-moz-selection {
-    background: $color-green;
+    background: $color-red;
     color: $color-white;
 }
 html * {
@@ -34,54 +34,6 @@ body {
 sup {
     vertical-align: super;
     line-height: 0;
-}
-h1,
-.h1 {
-    margin-bottom: 0.75em;
-    font-family: $font-family;
-    line-height: 1.2;
-    font-weight: bold;
-    font-size: 2.6rem;
-    color: $color-font;
-
-    @media (min-width: $breakpoint-tablet) {
-        font-size: 3.4rem;
-    }
-}
-h2,
-.h2 {
-    margin-bottom: 0.75em;
-    font-family: $font-family;
-    line-height: 1.2;
-    font-weight: bold;
-    font-size: 2.2rem;
-    color: $color-font;
-
-    @media (min-width: $breakpoint-tablet) {
-        font-size: 3.4rem;
-    }
-}
-h3,
-.h3 {
-    margin-bottom: 0.75em;
-    font-family: $font-family;
-    line-height: 1.2;
-    font-weight: bold;
-    font-size: 1.8rem;
-    color: $color-font;
-
-    @media (min-width: $breakpoint-tablet) {
-        font-size: 1.8rem;
-    }
-}
-h4,
-.h4 {
-    margin-bottom: 0.75em;
-    font-family: $font-family;
-    line-height: 1.2;
-    font-weight: bold;
-    font-size: 1.6rem;
-    color: $color-font;
 }
 a {
     color: $color-green;

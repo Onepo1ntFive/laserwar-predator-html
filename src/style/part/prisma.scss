@@ -1,0 +1,66 @@
+$prismaClass: '.prisma';
+
+#{$prismaClass} {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    margin-bottom: 20rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    &__inner {
+        position: relative;
+        margin: auto;
+        max-width: 120rem;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -1000%;
+            right: -1000%;
+            height: 100%;
+            background-color: #0f0f0f;
+            z-index: -1;
+        }
+    }
+    &__pic {
+        width: 50%;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+        }
+    }
+    &__content {
+        width: 50%;
+
+        p {
+            margin-bottom: 1em;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &-big {
+            padding-bottom: 8rem;
+            font-size: 2.4rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: $color-white;
+
+            strong {
+                color: $color-red;
+            }
+        }
+        &-small {
+            margin-left: auto;
+            width: 50%;
+            color: $color-font-gray;
+        }
+    }
+}

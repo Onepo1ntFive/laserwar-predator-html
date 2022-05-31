@@ -1,6 +1,6 @@
-.l-wrap {
-    padding-left: 20px;
-    padding-right: 20px;
+.wrap {
+    padding-left: 2rem;
+    padding-right: 2rem;
     width: 100%;
     min-height: 100%;
     position: relative;
@@ -8,11 +8,62 @@
     overflow: hidden;
     display: flex;
     flex-flow: column nowrap;
+    background-color: $color-black;
+    color: $color-white;
+
+    h1,
+    .h1 {
+        margin-bottom: 0.75em;
+        font-family: $font-family;
+        line-height: 1.2;
+        font-weight: 700;
+        font-size: 2.6rem;
+        color: $color-white;
+    
+        @media (min-width: $breakpoint-tablet) {
+            font-size: 4rem;
+        }
+    }
+    h2,
+    .h2 {
+        margin-bottom: 0.5em;
+        font-family: $font-family;
+        line-height: 1.2;
+        font-weight: bold;
+        font-size: 2.2rem;
+        color: $color-white;
+    
+        @media (min-width: $breakpoint-tablet) {
+            font-size: 8rem;
+        }
+    }
+    h3,
+    .h3 {
+        margin-bottom: 0.75em;
+        font-family: $font-family;
+        line-height: 1.2;
+        font-weight: bold;
+        font-size: 1.8rem;
+        color: $color-white;
+    
+        @media (min-width: $breakpoint-tablet) {
+            font-size: 1.8rem;
+        }
+    }
+    h4,
+    .h4 {
+        margin-bottom: 0.75em;
+        font-family: $font-family;
+        line-height: 1.2;
+        font-weight: bold;
+        font-size: 1.6rem;
+        color: $color-white;
+    }
 }
 /*----------*/
-.l-header {
+.header {
     margin: auto;
-    max-width: 1280px;
+    max-width: 120rem;
     width: 100%;
 
     @media (min-width: $breakpoint-tablet) {
@@ -21,23 +72,31 @@
     }
 }
 /*----------*/
-.l-content {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+.content {
     flex: 1 auto;
 
     @media (min-width: $breakpoint-tablet) {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
     }
 
     .content__wrap {
         margin: auto;
-        max-width: 1280px;
+        max-width: 120rem;
         width: 100%;
+
+        &-above {
+            position: relative;
+            z-index: 2;
+            background-color: $color-black;
+        }
+        &-below {
+            position: relative;
+            z-index: 1;
+
+            .content__wrap-inner {
+                position: relative;
+                // margin-top: -100vh;
+            }
+        }
     }
-}
-/*----------*/
-.l-footer {
 }
 /*----------*/

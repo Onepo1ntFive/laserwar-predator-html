@@ -6,6 +6,7 @@ const gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
+    remToPx = require('gulp-rem-to-px'),
     rigger = require('gulp-rigger'),
     webp = require('gulp-webp'),
     rimraf = require('rimraf'),
@@ -68,7 +69,8 @@ const styles = () => {
     return gulp
         .src(path.src.style)
         .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(sass({ outputStyle: 'compressed' }))
+        // .pipe(remToPx({ fontSize: 10 }))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(path.build.style))
         .pipe(reload({ stream: true }));
@@ -77,9 +79,7 @@ const styles = () => {
 const scripts = () => {
     return gulp
         .src(path.src.js)
-        .pipe(babel({
-            presets: ['@babel/env']
-        }))
+        .pipe(babel())
         // .pipe(uglify())
         .pipe(sourcemaps.init())
         .pipe(concat('main.js'))

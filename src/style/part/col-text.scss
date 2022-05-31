@@ -1,0 +1,91 @@
+$colTextClass: '.text-col';
+
+#{$colTextClass} {
+    margin: auto;
+    color: $color-font-gray;
+
+    &__cols {
+        margin-left: -2rem;
+        margin-right: -2rem;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    &__col {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        width: 50%;
+        display: flex;
+        flex-flow: row wrap;
+
+        span {
+            @media (min-width: $breakpoint-desktop) {
+                display: block;
+            }
+        }
+
+        &--offset-left #{$colTextClass}__inner {
+            margin-left: auto;
+            max-width: 40rem;
+        }
+        &--offset-right #{$colTextClass}__inner {
+            margin-right: auto;
+            max-width: 40rem;
+        }
+
+        &--big {
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: $color-white;
+            line-height: 1.3;
+
+            strong {
+                color: $color-red;
+            }
+        }
+    }
+
+    &__inner {
+        p {
+            margin-bottom: 1em;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &--200 {
+        padding-bottom: 20rem;
+    }
+    &--80 {
+        padding-bottom: 8rem;
+    }
+}
+
+.design-pic {
+    margin-left: -2rem;
+    margin-right: -2rem;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.design-text {
+    margin: auto;
+    padding-bottom: 20rem;
+    max-width: 84rem;
+    font-size: 2.4rem; 
+    font-weight: 600;
+    color: $color-white;
+    line-height: 1.3;
+
+    span {
+        display: block;
+    }
+
+    strong {
+        color: $color-red;
+    }
+}

@@ -6,20 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
 
-    <div class="l-wrap">
-        //= template/_header.html
-    
-        <section class="l-content"> 
-            <div class="content__wrap">
-                <pre>Your content</pre>
+    <div class="wrap">
+        <section class="content"> 
+            <div class="content__wrap-above">
+                <div class="content__wrap">
+                    //= ./template/promo.html
+                    //= ./template/text-col.html
+                    //= ./template/text-design.html
+                </div>
+                //= ./template/pic-gird.html
+                <div class="content__wrap">
+                    //= ./template/uniq.html
+                </div>
+                //= ./template/reload.html
+                <div class="content__wrap">
+                    //= ./template/sights.html
+                </div>
+            </div>
+            <div class="content__wrap-below">
+                <div class="content__wrap-inner">
+                    //= ./template/prisma.html
+                    //= ./template/trigger.html
+                    //= ./template/mask.html
+                    //= ./template/bumper.html
+                    //= ./template/benefits.html
+                    //= ./template/aim.html
+                    <div class="content__wrap">
+                        //= ./template/add.html
+                    </div>
+                </div>
             </div>
         </section>
-        
-        //= template/_footer.html
     </div>
     
     <script src="./js/main.js"></script>
