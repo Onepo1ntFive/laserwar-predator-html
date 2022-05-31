@@ -1,4 +1,5 @@
 <div class="design">
+    <link rel="preload" as="image" href="/img/design-pic-lazy.png">
     <div class="text-col">
         <div class="text-col__cols">
             <div class="text-col__col text-col__col--offset-left">
@@ -28,9 +29,9 @@
     </div>
     <div class="design-pic">
         <picture>
-            <source srcset="/img/design-pic.webp" type="image/webp">
-            <source srcset="/img/design-pic.png" type="image/png">
-            <img src="/img/design-pic.png" alt="">
+            <source data-srcset="/img/design-pic.webp" type="image/webp">
+            <source data-srcset="/img/design-pic.png" type="image/png">
+            <img class="lazy" src="/img/design-pic-lazy.png" data-src="/img/design-pic.png" alt="">
         </picture>
         <div class="design-text">
             <span>Новый макет <strong>сочетает в себе черты двух его прототипов</strong></span>

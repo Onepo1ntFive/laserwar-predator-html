@@ -1,10 +1,11 @@
 <div class="mask-track">
+    <link rel="preload" as="image" href="/img/mask-pic-lazy.png">
     <div class="mask pin">
         <div class="mask__pic">
             <picture>
-                <source srcset="/img/mask-pic.webp" type="image/webp">
-                <source srcset="/img/mask-pic.jpg" type="image/jpeg">
-                <img src="/img/mask-pic.jpg" alt="">
+                <source data-srcset="/img/mask-pic.webp" type="image/webp">
+                <source data-srcset="/img/mask-pic.jpg" type="image/jpeg">
+                <img class="lazy" src="/img/mask-pic-lazy.png" data-src="/img/mask-pic.jpg" alt="">
             </picture>
         </div>
         <div class="mask__content">

@@ -1,4 +1,6 @@
 (function () {
+    let lazyLoadInstance = new LazyLoad();
+
     gsap.registerPlugin(ScrollTrigger);
 
     window.onload = function (e) {

@@ -1,4 +1,5 @@
 <div class="trigger">
+    <link rel="preload" as="image" href="/img/trigger-pic-lazy.png">
     <div class="trigger__content">
         <div class="trigger__content-big">
             <p><strong>Бесконтактная система спуска</strong></p>
@@ -11,9 +12,9 @@
     </div>
     <div class="trigger__pic">
         <picture>
-            <source srcset="/img/trigger-pic.webp" type="image/webp">
-            <source srcset="/img/trigger-pic.png" type="image/png">
-            <img src="/img/trigger-pic.png" alt="">
+            <source data-srcset="/img/trigger-pic.webp" type="image/webp">
+            <source data-srcset="/img/trigger-pic.png" type="image/png">
+            <img class="lazy" src="/img/trigger-pic-lazy.png" data-src="/img/trigger-pic.png" alt="">
         </picture>
     </div>
 </div>
