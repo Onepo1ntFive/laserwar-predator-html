@@ -74,8 +74,26 @@ $benefirtsClass: '.benefits';
         padding-right: 2rem;
         width: 50%;
 
+        picture {
+            display: block;
+            overflow: hidden;
+        }
+
         img {
+            margin-top: -10rem;
+            margin-bottom: -10rem;
             max-width: calc(100% + 20rem);
+        }
+    }
+
+    &__item:nth-child(2n + 1) {
+        #{$benefirtsClass} {
+            &__pic {
+                picture {
+                    margin-right: -100rem;
+                    padding-right: 100%;
+                }
+            }
         }
     }
 
@@ -91,6 +109,8 @@ $benefirtsClass: '.benefits';
                 order: 1;
 
                 picture {
+                    margin-left: -100rem;
+                    padding-left: 100rem;
                     display: flex;
                     flex-flow: row nowrap;
                     justify-content: flex-end;

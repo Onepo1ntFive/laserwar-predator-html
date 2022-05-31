@@ -722,6 +722,7 @@
             }, {
                 y: '-=20%',
             })
+
         // tl
         const tl12 = gsap.timeline({
             scrollTrigger: {
@@ -751,8 +752,78 @@
                 stagger: 0.1,
             })
 
+        //
+        let sections = gsap.utils.toArray(".benefits__item");
 
+        sections.forEach((section) => {
+            let pic = section.querySelector('.benefits__pic img')
+            gsap.timeline({
+                scrollTrigger: {
+                    toggleActions: "play pause resume reverse",
+                    trigger: section,
+                    start: 'top bottom',
+                    end: "bottom top",
+                    scrub: true,
+                    pin: false,
+                    markers: false,
+                }
+            })
+                .fromTo(pic, {
+                    y: 100,
+                }, {
+                    y: -100,
+                })
 
+            let title = section.querySelector('.benefits__content h2');
+            let cols = section.querySelectorAll('.benefits__content-col > *');
+            gsap.timeline({
+                scrollTrigger: {
+                    toggleActions: "play pause resume reverse",
+                    trigger: section,
+                    start: 'top center',
+                    end: "bottom center",
+                    scrub: false,
+                    pin: false,
+                    markers: false,
+                }
+            })
+                .fromTo(title, {
+                    y: -20,
+                    opacity: 0
+                }, {
+                    y: 0,
+                    opacity: 1
+                })
+                .fromTo(cols, {
+                    y: -20,
+                    opacity: 0
+                }, {
+                    y: 0,
+                    opacity: 1,
+                    stagger: 0.2
+                })
+        })
 
+        // tl
+        const tl13 = gsap.timeline({
+            scrollTrigger: {
+                toggleActions: "play pause resume reverse",
+                trigger: ".add",
+                start: "-100 center",
+                end: "bottom top",
+                scrub: false,
+                pin: false,
+                markers: false,
+            },
+        })
+
+        tl13
+            .fromTo(".add__pic img", {
+                y: '-40%',
+                opacity: 0,
+            }, {
+                y: '-45%',
+                opacity: 1,
+            })
     }// window loaded
 })();
