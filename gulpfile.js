@@ -97,7 +97,7 @@ const fonts = () => {
 const imagesWebp = () => {
     return gulp
         .src(path.src.img)
-        .pipe(webp({ quality: 80, preset: 'photo' }))
+        .pipe(webp({ quality: 90, preset: 'photo' }))
         .pipe(gulp.dest(path.build.img))
 }
 

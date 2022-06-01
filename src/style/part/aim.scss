@@ -1,8 +1,12 @@
 $aimClass: '.aim';
 #{$aimClass} {
-    margin-bottom: 20rem;
-    height: 100vh;
+    margin-bottom: 10rem;
     position: relative;
+
+    @media (min-width: $breakpoint-desktop) {
+        margin-bottom: 20rem;
+        height: 100vh;
+    }
 
     &__content {
         position: absolute;
@@ -11,23 +15,37 @@ $aimClass: '.aim';
         top: 50%;
         transform: translate(-50%, -50%);
         font-weight: 600;
-        font-size: 2.4rem;
+        font-size: 1.6rem;
         width: 100%;
         text-align: center;
 
+        @media (min-width: $breakpoint-desktop) {
+            font-size: 2.4rem;
+        }
+
         & > h2 {
+            margin-bottom: 1em;
             margin-left: auto;
             margin-right: auto;
-            max-width: 100rem;
+            max-width: 38rem;
             width: 100%;
-            font-size: 6rem;
+            font-size: 2.4rem;
+
+            @media (min-width: $breakpoint-desktop) {
+                max-width: 100rem;
+                font-size: 6rem;
+            }
         }
 
         p {
             margin-left: auto;
             margin-right: auto;
-            max-width: 92rem;
+            max-width: 38rem;
             width: 100%;
+
+            @media (min-width: $breakpoint-desktop) {
+             max-width: 92rem;
+            }
         }
     }
 
@@ -36,12 +54,20 @@ $aimClass: '.aim';
         position: relative;
         width: 90.6rem;
         max-width: 100%;
+        text-align: center;
 
         img {
             text-align: center;
             position: relative;
             z-index: 1;
             max-width: 100%;
+
+            @media (min-width: $breakpoint-desktop) {
+                max-height: 100vh;
+            }
+            @media (min-width: $breakpoint-desktop-extra) {
+                max-height: none;
+            }
         }
 
         &::after {

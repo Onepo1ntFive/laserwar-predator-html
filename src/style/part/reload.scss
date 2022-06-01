@@ -1,17 +1,29 @@
 $reloadClass: '.reload';
 
 #{$reloadClass} {
-    margin-bottom: 20rem;
+    margin-bottom: 10rem;
+    
+    @media (min-width: $breakpoint-desktop) {
+        margin-bottom: 20rem;
+    }
 
     &__content {
         margin: auto;
         max-width: 120rem;
     }
     &__title {
-        margin-bottom: 8rem;
+        margin-bottom: 3rem;
         font-weight: 600;
-        font-size: 6rem;
+        font-size: 2.4rem;
         line-height: 1.1;
+
+        @media (min-width: $breakpoint-tablet) {
+            margin-bottom: 8rem;
+            font-size: 3.9rem; 
+        }
+        @media (min-width: $breakpoint-desktop) {
+            font-size: 6rem; 
+        }
 
         span {
             display: block;
@@ -22,9 +34,15 @@ $reloadClass: '.reload';
         }
     }
     &__block {
-        width: 50%;
-        margin-left: auto;
+        padding-bottom: 4rem;
+        width: 100%;
         color: $color-font-gray;
+        
+        @media (min-width: $breakpoint-desktop) {
+            padding-bottom: 0;
+            margin-left: auto;
+            width: 50%;
+        }
 
         p {
             margin-bottom: 1em;
