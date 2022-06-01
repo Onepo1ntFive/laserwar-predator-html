@@ -3812,6 +3812,7 @@
 });
 (function () {
   let lazyLoadInstance = new LazyLoad();
+  const windowWidth = window.innerWidth;
   gsap.registerPlugin(ScrollTrigger);
 
   window.onload = function (e) {
@@ -3847,7 +3848,7 @@
       scrollTrigger: {
         toggleActions: "play pause resume reverse",
         trigger: ".text-col--lines",
-        start: "-100 center",
+        start: "-200 center",
         end: "bottom top",
         scrub: false,
         pin: false,
@@ -3889,22 +3890,25 @@
       stagger: 0.1
     }); // tl
 
-    const tl3 = gsap.timeline({
-      scrollTrigger: {
-        toggleActions: "play pause resume reverse",
-        trigger: ".design-pic",
-        start: "-100 center",
-        end: "bottom top",
-        scrub: true,
-        pin: false,
-        markers: false
-      }
-    });
-    tl3.fromTo(".design-pic img", {
-      y: "50%"
-    }, {
-      y: "-35%"
-    }); // tl
+    if (windowWidth >= 1200) {
+      const tl3 = gsap.timeline({
+        scrollTrigger: {
+          toggleActions: "play pause resume reverse",
+          trigger: ".design-pic",
+          start: "-100 center",
+          end: "bottom top",
+          scrub: true,
+          pin: false,
+          markers: false
+        }
+      });
+      tl3.fromTo(".design-pic img", {
+        y: "50%"
+      }, {
+        y: "-35%"
+      });
+    } // tl
+
 
     const tl4 = gsap.timeline({
       scrollTrigger: {
@@ -3929,7 +3933,7 @@
     let sectionsBottom = gsap.utils.toArray(".pic-grid__pic[data-direction='bottom']");
     sectionsBottom.forEach(sectionBottom => {
       let items = sectionBottom.querySelector('img');
-      gsap.timeline({
+      let sectionsBottomTl = gsap.timeline({
         scrollTrigger: {
           toggleActions: "play pause resume reverse",
           trigger: sectionBottom,
@@ -3939,17 +3943,27 @@
           pin: false,
           markers: false
         }
-      }).fromTo(items, {
-        bottom: '15%'
-      }, {
-        bottom: '-15%'
       });
+
+      if (windowWidth >= 1200) {
+        sectionsBottomTl.fromTo(items, {
+          bottom: '100'
+        }, {
+          bottom: '-100'
+        });
+      } else {
+        sectionsBottomTl.fromTo(items, {
+          bottom: '50'
+        }, {
+          bottom: '-50'
+        });
+      }
     }); // tl
 
     let sectionsTop = gsap.utils.toArray(".pic-grid__pic[data-direction='top']");
     sectionsTop.forEach(sectionTop => {
       let items = sectionTop.querySelector('img');
-      gsap.timeline({
+      let sectionsTopTl = gsap.timeline({
         scrollTrigger: {
           toggleActions: "play pause resume reverse",
           trigger: sectionTop,
@@ -3959,11 +3973,21 @@
           pin: false,
           markers: false
         }
-      }).fromTo(items, {
-        top: '15%'
-      }, {
-        top: '-15%'
       });
+
+      if (windowWidth >= 1200) {
+        sectionsTopTl.fromTo(items, {
+          top: '100'
+        }, {
+          top: '-100'
+        });
+      } else {
+        sectionsTopTl.fromTo(items, {
+          top: '50'
+        }, {
+          top: '-50'
+        });
+      }
     }); // tl
 
     const tl5 = gsap.timeline({
@@ -3978,6 +4002,13 @@
       }
     });
     tl5.fromTo(".uniq__content > *", {
+      y: -20,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1,
+      stagger: 0.1
+    }, 'tl5').fromTo(".uniq__content-col > *", {
       y: -20,
       opacity: 0
     }, {
@@ -4002,22 +4033,25 @@
       delay: 0.5
     }, 'tl5'); // tl
 
-    const tl6 = gsap.timeline({
-      scrollTrigger: {
-        toggleActions: "play pause resume reverse",
-        trigger: ".uniq",
-        start: "-25% center",
-        end: "125% top",
-        scrub: true,
-        pin: false,
-        markers: false
-      }
-    });
-    tl6.fromTo(".uniq__pic img", {
-      y: "25%"
-    }, {
-      y: "-25%"
-    }); // tl
+    if (windowWidth >= 1200) {
+      const tl6 = gsap.timeline({
+        scrollTrigger: {
+          toggleActions: "play pause resume reverse",
+          trigger: ".uniq",
+          start: "-25% center",
+          end: "125% top",
+          scrub: true,
+          pin: false,
+          markers: false
+        }
+      });
+      tl6.fromTo(".uniq__pic img", {
+        y: "25%"
+      }, {
+        y: "-25%"
+      });
+    } // tl
+
 
     const tl7 = gsap.timeline({
       scrollTrigger: {
@@ -4073,24 +4107,27 @@
       stagger: 0.1
     }); // tl
 
-    const tl_content = gsap.timeline({
-      scrollTrigger: {
-        toggleActions: "play pause resume reverse",
-        trigger: ".prisma",
-        start: `-100% top`,
-        end: `top top`,
-        scrub: true,
-        pin: false,
-        markers: false
-      }
-    });
-    tl_content.fromTo(".prisma__inner", {
-      top: `-${parseFloat(getComputedStyle(document.querySelector('.prisma'), null).height.replace("px", ""))}`,
-      opacity: 0.5
-    }, {
-      top: '0px',
-      opacity: 1
-    }); // tl
+    if (windowWidth >= 1200) {
+      const tl_content = gsap.timeline({
+        scrollTrigger: {
+          toggleActions: "play pause resume reverse",
+          trigger: ".prisma",
+          start: `-100% top`,
+          end: `top top`,
+          scrub: true,
+          pin: false,
+          markers: false
+        }
+      });
+      tl_content.fromTo(".prisma__inner", {
+        top: `-${parseFloat(getComputedStyle(document.querySelector('.prisma'), null).height.replace("px", ""))}`,
+        opacity: 0.5
+      }, {
+        top: '0px',
+        opacity: 1
+      });
+    } // tl
+
 
     const tl9 = gsap.timeline({
       scrollTrigger: {
@@ -4118,7 +4155,28 @@
       opacity: 1,
       delay: 0.2,
       stagger: 0.1
-    }, 'tl9'); // tl
+    }, 'tl9');
+
+    if (windowWidth >= 1200) {
+      // tl
+      const tl9_2 = gsap.timeline({
+        scrollTrigger: {
+          toggleActions: "play pause resume reverse",
+          trigger: ".trigger",
+          start: "-100 center",
+          end: "bottom top",
+          scrub: true,
+          pin: false,
+          markers: false
+        }
+      });
+      tl9_2.fromTo(".trigger__pic img", {
+        y: "50%"
+      }, {
+        y: "-35%"
+      });
+    } // tl
+
 
     const tl_mask = gsap.timeline({
       scrollTrigger: {
@@ -4131,13 +4189,25 @@
         markers: false
       }
     });
-    tl_mask.fromTo(".mask", {
-      '-webkit-mask-size': '0%',
-      'mask-size': '0%'
-    }, {
-      '-webkit-mask-size': '250%',
-      'mask-size': '250%'
-    }); // tl
+
+    if (windowWidth >= 1200) {
+      tl_mask.fromTo(".mask", {
+        '-webkit-mask-size': '0%',
+        'mask-size': '0%'
+      }, {
+        '-webkit-mask-size': '180%',
+        'mask-size': '180%'
+      });
+    } else {
+      tl_mask.fromTo(".mask", {
+        '-webkit-mask-size': '0%',
+        'mask-size': '0%'
+      }, {
+        '-webkit-mask-size': '350%',
+        'mask-size': '350%'
+      });
+    } // tl
+
 
     const tl10 = gsap.timeline({
       scrollTrigger: {
@@ -4215,13 +4285,14 @@
       pcr.appendChild(img);
       document.querySelector('.js-bumper-block').appendChild(pcr);
     });
+    let bumperAnimationendPoint = windowWidth >= 1200 ? 5000 : 3000;
     let tl_bumper = gsap.timeline({
       scrollTrigger: {
         toggleActions: "play none none reverse",
         trigger: ".bumper-track",
         start: "top top",
-        end: "5000 bottom",
-        scrub: 0.5,
+        end: `${bumperAnimationendPoint} bottom`,
+        scrub: 1,
         markers: false,
         id: "tl_bumper",
         pin: '.bumper__seq',
@@ -4248,29 +4319,33 @@
       scrollTrigger: {
         toggleActions: "play none none reverse",
         trigger: ".bumper-track",
-        start: `${5000 - parseFloat(getComputedStyle(document.querySelector('.bumper__content'), null).height.replace("px", "")) * 1.5} center`,
-        end: "5000 center",
+        start: `${bumperAnimationendPoint - parseFloat(getComputedStyle(document.querySelector('.bumper__content'), null).height.replace("px", "")) * 1.5} center`,
+        end: `${bumperAnimationendPoint} center`,
         scrub: 0.5,
         markers: false,
         pin: false
       }
     });
-    tl_bumper_2.fromTo('.bumper__benefits > :nth-child(1), .bumper__benefits > :nth-child(4)', {
-      top: 100
-    }, {
-      duration: 10,
-      top: 0
-    }, 'tl_bumper_2').fromTo('.bumper__benefits > :nth-child(2), .bumper__benefits > :nth-child(5)', {
-      top: 200
-    }, {
-      duration: 10,
-      top: 0
-    }, 'tl_bumper_2').fromTo('.bumper__benefits > :nth-child(3), .bumper__benefits > :nth-child(6)', {
-      top: 300
-    }, {
-      duration: 10,
-      top: 0
-    }, 'tl_bumper_2'); // tl
+
+    if (windowWidth >= 1200) {
+      tl_bumper_2.fromTo('.bumper__benefits > :nth-child(1), .bumper__benefits > :nth-child(4)', {
+        top: 100
+      }, {
+        duration: 10,
+        top: 0
+      }, 'tl_bumper_2').fromTo('.bumper__benefits > :nth-child(2), .bumper__benefits > :nth-child(5)', {
+        top: 200
+      }, {
+        duration: 10,
+        top: 0
+      }, 'tl_bumper_2').fromTo('.bumper__benefits > :nth-child(3), .bumper__benefits > :nth-child(6)', {
+        top: 300
+      }, {
+        duration: 10,
+        top: 0
+      }, 'tl_bumper_2');
+    } // tl
+
 
     const tl11 = gsap.timeline({
       scrollTrigger: {
@@ -4318,7 +4393,7 @@
     let sections = gsap.utils.toArray(".benefits__item");
     sections.forEach(section => {
       let pic = section.querySelector('.benefits__pic img');
-      gsap.timeline({
+      let benefitsTl = gsap.timeline({
         scrollTrigger: {
           toggleActions: "play pause resume reverse",
           trigger: section,
@@ -4328,11 +4403,22 @@
           pin: false,
           markers: false
         }
-      }).fromTo(pic, {
-        y: 100
-      }, {
-        y: -100
       });
+
+      if (windowWidth >= 1200) {
+        benefitsTl.fromTo(pic, {
+          y: 100
+        }, {
+          y: -100
+        });
+      } else {
+        benefitsTl.fromTo(pic, {
+          y: 50
+        }, {
+          y: -50
+        });
+      }
+
       let title = section.querySelector('.benefits__content h2');
       let cols = section.querySelectorAll('.benefits__content-col > *');
       gsap.timeline({
@@ -4372,13 +4458,24 @@
         markers: false
       }
     });
-    tl13.fromTo(".add__pic img", {
-      y: '-40%',
-      opacity: 0
-    }, {
-      y: '-45%',
-      opacity: 1
-    });
+
+    if (windowWidth >= 1200) {
+      tl13.fromTo(".add__pic img", {
+        y: '-40%',
+        opacity: 0
+      }, {
+        y: '-45%',
+        opacity: 1
+      });
+    } else {
+      tl13.fromTo(".add__pic img", {
+        y: '-5%',
+        opacity: 0
+      }, {
+        y: '0%',
+        opacity: 1
+      });
+    }
   }; // window loaded
 
 })();
