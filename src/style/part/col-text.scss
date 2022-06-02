@@ -29,6 +29,7 @@ $colTextClass: '.text-col';
         }
 
         span {
+            opacity: 0;
             @media (min-width: $breakpoint-desktop) {
                 display: block;
             }

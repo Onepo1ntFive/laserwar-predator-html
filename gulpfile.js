@@ -70,7 +70,7 @@ const styles = () => {
         .src(path.src.style)
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }))
-        // .pipe(remToPx({ fontSize: 10 }))
+        .pipe(remToPx({ fontSize: 10 }))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(path.build.style))
         .pipe(reload({ stream: true }));
@@ -80,7 +80,7 @@ const scripts = () => {
     return gulp
         .src(path.src.js)
         .pipe(babel())
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(sourcemaps.init())
         .pipe(concat('main.js'))
         .pipe(sourcemaps.write('./maps'))

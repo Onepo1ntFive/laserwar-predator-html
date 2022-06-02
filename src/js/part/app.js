@@ -745,7 +745,7 @@
             scrollTrigger: {
                 toggleActions: "play none none reverse",
                 trigger: ".bumper-track",
-                start: `${bumperAnimationendPoint - parseFloat(getComputedStyle(document.querySelector('.bumper__content'), null).height.replace("px", "")) * 1.5} center`,
+            start: `${bumperAnimationendPoint - parseFloat(getComputedStyle(document.querySelector('.bumper__content'), null).height.replace("px", "")) * 1.5} center`,
                 end: `${bumperAnimationendPoint} center`,
                 scrub: 0.5,
                 markers: false,
