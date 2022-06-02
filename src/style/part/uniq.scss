@@ -66,6 +66,8 @@ $uniqClass: '.uniq';
             width: 100%;
             
             @media (min-width: $breakpoint-tablet) {
+                padding-left: 0;
+                padding-right: 0;
                 width: 50%;
             }
 
